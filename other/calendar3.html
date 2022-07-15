@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="index.css"> -->
+    <!-- <script src="calendar.js"></script> -->
+    <title>Calendar</title>
+
+    <style>
+        .topbtn {
+            position: sticky;
+            position: -webkit-sticky;
+            border: 2px solid rebeccapurple;
+            border-radius: 55px;
+            background-color: white;
+            right: 0;
+            top: 500;
+            width: 50px;
+            height: 20px;
+            text-align: center;
+        }
+        /* Container */
+        
+        .container {
+            width: 1152px;
+            margin: 0 auto;
+            background-color: antiquewhite;
+        }
+        /* Header */
+        
+        .header {
+            background-color: rgba(62, 62, 62, 0.823);
+            /* text-align: center; */
+            /* position: relative; */
+            /* padding-left: -16px; */
+            margin-bottom: -20px;
+        }
+        
+        .header .logo img {
+            width: 100px;
+        }
+        /* Navbar */
+        
+        ul {
+            border: 1px solid saddlebrown;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            /* padding-left: -8px; */
+        }
+        
+        nav li {
+            list-style: none;
+            display: inline-block;
+        }
+        
+        ul li a {
+            /* border: 1px solid blue; */
+            margin-right: 15px;
+            text-decoration: none;
+            color: gold;
+            text-shadow: black 0.1em 0.1em 0.2em;
+            transform: 1s;
+            border-radius: 10px;
+            font-size: 15px;
+            border: 1px solid gainsboro;
+            padding: 15px;
+        }
+        
+        ul li a:hover {
+            background-image: linear-gradient(to top, black, rgb(60, 60, 60), rgba(120, 120, 120), rgba(180, 180, 180), rgba(240, 240, 240));
+        }
+        /* 行事曆 */
+        
+        * {
+            font-family: verdana;
+        }
+        
+        .section {
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid blue; */
+            box-sizing: border-box;
+            /* background-color: #247ff55b; */
+            background-color: #919484;
+        }
+        
+        .odd {
+            background-color: #948491;
+        }
+        
+        .raceinfo {
+            margin: 30px;
+            /* border: 1px solid red; */
+        }
+        
+        .section .raceinfo .month>h2 {
+            font-size: 100px;
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+            -webkit-text-stroke: 4px white;
+        }
+        
+        .odd .raceinfo .month>h1 {
+            color: rgb(74, 74, 74);
+            -webkit-text-stroke: 4px rgb(74, 74, 74);
+        }
+        
+        .card {
+            /* border: 1px solid green; */
+            display: flex;
+        }
+        
+        .section .text-card {
+            background-color: #faaf72df;
+            background-blend-mode: multiply;
+            background-repeat: space;
+            margin: -110px 40px 0 40px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            width: 200px;
+        }
+        
+        .odd .text-card {
+            background-color: rgba(148, 179, 181, 0.842);
+            /* flex-shrink: 0; */
+        }
+        
+        .section .text-card h1 {
+            font-size: 35px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: -25px;
+            margin-bottom: -35px;
+            color: #A33318;
+            -webkit-text-stroke: 1px #A33318;
+            letter-spacing: -2px;
+            text-shadow: rgba(0, 0, 0, 0.22) -5px 8px 2px;
+        }
+        
+        .odd .text-card h1 {
+            /* odd 國家名稱 */
+            color: #1303fa;
+            -webkit-text-stroke: 1px #1303fa;
+            text-shadow: grey -5px 8px 2px;
+        }
+        
+        .text-card img {
+            width: 70px;
+            height: 40px;
+            /* text-align: center; */
+            /* display: block; */
+            /* border-bottom: 2px solid white; */
+            /* float: left; */
+            margin-top: 20px;
+        }
+        
+        .text-title span {
+            display: block;
+            text-align: center;
+            /* color: rgb(177, 40, 18); */
+            color: black;
+            font-size: 20px;
+            border-bottom: 2px solid white;
+        }
+        
+        .odd .text-title span {
+            color: white;
+        }
+        
+        .section .text-card :nth-child(4) {
+            /* N Days */
+            color: white;
+            display: block;
+            text-align: center;
+            font-size: 25px;
+            margin-top: 15px;
+            text-shadow: black 0.1em 0.1em 0.2em;
+        }
+        
+        .odd .text-card :nth-child(4) {
+            color: red;
+            text-shadow: white 0.1em 0.1em 0.2em;
+        }
+        
+        .section .text-card :nth-child(5) {
+            /* remaining min */
+            display: inline;
+            color: blue;
+            text-align: center;
+            font-size: 15px;
+            line-height: 15px;
+            margin-top: 0px;
+        }
+        
+        .section .text-card :nth-child(6) {
+            display: inline;
+            color: blue;
+            text-align: center;
+            font-size: 15px;
+            line-height: 15px;
+            margin-top: 0px;
+            animation: blink 1s linear infinite;
+        }
+        
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+            81% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+        
+        .odd .text-card :nth-child(5),
+        .odd .text-card :nth-child(6) {
+            color: wheat;
+        }
+        
+        .section .text-card :nth-child(7) {
+            font-size: 50px;
+            margin: 0;
+            color: #c824f5cb;
+        }
+        
+        .odd .text-card :nth-child(7) {
+            color: #0aa117;
+        }
+        
+        @media (max-width: 900px) {
+            .section .card {
+                flex-direction: column;
+            }
+            .section .text-card:not(:first-child) {
+                margin-top: 0;
+            }
+            .section .text-card {
+                margin-bottom: 20px;
+            }
+            .container {
+                width: 100%;
+            }
+            .header {
+                width: 100%;
+                /* height: 100%; */
+            }
+            ul {
+                text-align: center;
+                /* columns: 2; */
+                /* flex-direction: column; */
+                flex-wrap: nowrap;
+            }
+        }
+        
+        @media (max-width: 750px) {
+            .section .card {
+                flex-direction: column;
+            }
+            .section .text-card:not(:first-child) {
+                margin-top: 0;
+            }
+            .section .text-card {
+                margin-bottom: 20px;
+            }
+            .container {
+                width: 100%;
+            }
+            .header {
+                width: 100%;
+                /* height: 100%; */
+            }
+            ul {}
+            nav li {}
+            ul li a {
+                font-size: 10px;
+                margin-right: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" id="header">
+        <nav>
+            <ul id="nav">
+                <a class="logo" href="index.html"><img src="logo3.png"></a>
+                <li><a href="TEAM.html">TEAM</a> </li>
+                <li><a href="">Racer</a> </li>
+                <li><a href="calendar.html">Calendar</a> </li>
+                <li><a href="">Message Board</a> </li>
+            </ul>
+        </nav>
+        <!-- <script>
+            setInterval(function changephoto() {
+                var photoelm = document.getElementById('photos'); // 取得photo的element
+                var p1 = photoelm.src.indexOf('photo1'); // 取得photo1字串在photo中的第幾位
+                var p3 = photoelm.src.indexOf('photo3');
+
+                switch (p1) {
+                    case 28:
+                        photoelm.src = 'photo/photo2.jpg';
+                        break;
+                    case -1:
+                        if (p3 == 28) {
+                            photoelm.src = 'photo/photo1.jpg';
+                        } else {
+                            photoelm.src = 'photo/photo3.jpg';
+                        }
+                }
+            }, 5000); -->
+        </script>
+    </div>
+    <!-- <a class="topbtn" href="#header">TOP</a> -->
+    <div class="container">
+        <!-- <img class='bkimg' src="background_container.jpg" alt=""> -->
+
+
+
+        <div class="section even reveal" id="april">
+            <div class="raceinfo">
+                <div class="month">
+                    <h2>April</h2>
+
+                    <div class="card">
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 4</span>
+                            </div>
+                            <img src="circuit/flag/ITALY.png" alt="">
+                            <h1>Italy</h1>
+                            <span><b id="remaining_time_apr1"></b></span>
+                            <p id="remaining_min_apr1"></p><span id='remaining_sec_apr1'></span>
+                            <p id="racedayapr1">22-24</p>
+                            <!-- <script>
+                                var temp = document.getElementById('raceday');
+                                // console.log(temp.textContent); //22-24
+                                var rd = temp.textContent.substr(3, 2); // 從第3碼開始往後算2碼
+                                // console.log(rd);
+                                // time();
+                                // var aa = document.querySelectorAll('.section');
+                                // console.log(aa)
+                                setInterval(function time() {
+                                    // new date
+                                    var now = new Date();
+                                    var rdtime = new Date(2022, 03, rd, 20, 00);
+
+                                    // day
+                                    // console.log(now);
+                                    // console.log(rdtime);
+                                    var diff = Math.floor((rdtime - now) / 86400000);
+                                    // console.log(diff);
+
+                                    // hour
+                                    var nowhr = now.getHours();
+                                    // console.log(nowhr);
+                                    var rdhr = rdtime.getHours();
+                                    // console.log(rdhr);
+                                    var diffhr = rdhr - nowhr;
+                                    // console.log(diffhr);
+                                    if (diffhr < 0) {
+                                        diffhr = 24 - nowhr + rdhr - 1;
+                                        // console.log(diffhr);
+                                    }
+                                    if (diffhr == 0) {
+                                        diffhr = 0;
+                                    }
+
+                                    //min
+                                    var nowmin = now.getMinutes();
+                                    // console.log(nowmin);
+                                    // var rdmin = rdtime.getMinutes();
+                                    var diffmin = 60 - nowmin;
+                                    // console.log(diffmin);
+                                    if (diffmin == 60) {
+                                        diffmin = 0;
+                                    }
+
+                                    // sec
+                                    var nowsec = now.getSeconds();
+
+                                    var diffsec = 60 - nowsec;
+                                    // console.log(diffsec);
+                                    if (diffsec == 60) {
+                                        diffsec = 0;
+                                    }
+
+                                    document.getElementById('remaining_time').innerText = `${diff}D ${diffhr}H`;
+                                    document.getElementById('remaining_min').innerText = `${diffmin}m`;
+                                    document.getElementById('remaining_sec').innerText = ` ${diffsec}s`;
+                                }, 1000);
+                            </script> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section odd reveal" id="may">
+            <div class="raceinfo">
+                <div class="month">
+                    <h2>May</h2>
+
+                    <div class="card">
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 5</span>
+                            </div>
+                            <img src="circuit/flag/UNITED_STATES.png" alt="">
+                            <h1>US</h1>
+                            <span><b id="remaining_time_m1"></b></span>
+
+                            <p id="remaining_min_m1"></p><span id='remaining_sec_m1'></span>
+                            <p id="racedaym1" class="racedaym1_m1">06-08</p>
+                        </div>
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 6</span>
+                            </div>
+                            <img src="circuit/flag/SPAIN.png" alt="">
+                            <h1>spain</h1>
+                            <span><b id="remaining_time_m2"></b></span>
+                            <p id="remaining_min_m2"></p><span id='remaining_sec_m2'></span>
+                            <p id="racedaym2" class="racedaym2">20-22</p>
+                        </div>
+
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 7</span>
+                            </div>
+                            <img src="circuit/flag/MONACO.png" alt="">
+
+                            <h1>monaco</h1>
+                            <span><b id="remaining_time_m3"></b></span>
+                            <p id="remaining_min_m3"></p><span id='remaining_sec_m3'></span>
+                            <p id="racedaym3" class="racedaym3">27-29</p>
+                        </div>
+                        <!-- <script>
+                            setInterval(function time() {
+                                for (var m_number = 1; m_number <= 3; m_number++) {
+                                    // console.log(m_number);
+                                    var temp2 = document.getElementById(`racedaym${m_number}`);
+                                    // console.log(temp2.textContent);
+                                    var rd = temp2.textContent.substr(3, 2); // 從第3碼開始往後算2碼
+                                    // console.log(rd);// new date
+                                    var now = new Date();
+                                    var rdtime = new Date(2022, 04, rd, 20, 00);
+                                    // day
+                                    var diff = Math.floor((rdtime - now) / 86400000);
+                                    // console.log(`day:${diff}`)
+                                    // hour
+                                    var nowhr = now.getHours();
+                                    var rdhr = rdtime.getHours();
+                                    var diffhr = rdhr - nowhr;
+                                    if (diffhr < 0) {
+                                        diffhr = 24 - nowhr + rdhr - 1;
+
+                                    }
+                                    if (diffhr == 0) {
+                                        diffhr = 0;
+                                    }
+                                    //min
+                                    var nowmin = now.getMinutes();
+                                    var diffmin = 60 - nowmin;
+                                    if (diffmin == 60) {
+                                        diffmin = 0;
+                                    }
+                                    // sec
+                                    var nowsec = now.getSeconds();
+                                    var diffsec = 60 - nowsec;
+                                    if (diffsec == 60) {
+                                        diffsec = 0;
+                                    }
+                                    document.getElementById(`remaining_time_m${m_number}`).innerText = `${diff}D ${diffhr}H`;
+                                    document.getElementById(`remaining_min_m${m_number}`).innerText = `${diffmin}m`;
+                                    document.getElementById(`remaining_sec_m${m_number}`).innerText = ` ${diffsec}s`;
+                                }
+                            }, 1000);
+                        </script> -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="section even reveal" id="june">
+            <div class="raceinfo">
+                <div class="month">
+                    <h2>June</h2>
+
+                    <div class="card">
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 8</span>
+                            </div>
+                            <img src="circuit/flag/AZERBAIJAN.png" alt="">
+                            <h1 style="font-size: 30px">AZERBAIJAN</h1>
+                            <span><b id="remaining_time_jun1"></b></span>
+                            <p id="remaining_min_jun1"></p><span id='remaining_sec_jun1'></span>
+                            <p id="racedayjun1">10-12</p>
+                        </div>
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 9</span>
+                            </div>
+                            <img src="circuit/flag/CANADA.png" alt="">
+                            <h1>CANADA</h1>
+                            <span><b id="remaining_time_jun2"></b></span>
+                            <p id="remaining_min_jun2"></p><span id='remaining_sec_jun2'></span>
+                            <p id="racedayjun2">17-19</p>
+
+                        </div>
+                        <!-- <script>
+                            setInterval(function time() {
+                                for (var m_number = 1; m_number <= 3; m_number++) {
+                                    // console.log(m_number);
+                                    var temp3 = document.getElementById(`racedayjun${m_number}`);
+                                    // console.log(temp3.textContent);
+                                    var rd = temp3.textContent.substr(3, 2); // 從第3碼開始往後算2碼
+                                    // console.log(rd);// new date
+                                    var now = new Date();
+                                    var rdtime = new Date(2022, 05, rd, 20, 00);
+                                    // day
+                                    var diff = Math.floor((rdtime - now) / 86400000);
+                                    // console.log(`day:${diff}`)
+                                    // hour
+                                    var nowhr = now.getHours();
+                                    var rdhr = rdtime.getHours();
+                                    var diffhr = rdhr - nowhr;
+                                    if (diffhr < 0) {
+                                        diffhr = 24 - nowhr + rdhr - 1;
+
+                                    }
+                                    if (diffhr == 0) {
+                                        diffhr = 0;
+                                    }
+                                    //min
+                                    var nowmin = now.getMinutes();
+                                    var diffmin = 60 - nowmin;
+                                    if (diffmin == 60) {
+                                        diffmin = 0;
+                                    }
+                                    // sec
+                                    var nowsec = now.getSeconds();
+                                    var diffsec = 60 - nowsec;
+                                    if (diffsec == 60) {
+                                        diffsec = 0;
+                                    }
+                                    document.getElementById(`remaining_time_jun${m_number}`).innerText = `${diff}D ${diffhr}H`;
+                                    document.getElementById(`remaining_min_jun${m_number}`).innerText = `${diffmin}m`;
+                                    document.getElementById(`remaining_sec_jun${m_number}`).innerText = ` ${diffsec}s`;
+                                }
+                            }, 1000);
+                        </script> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section odd reveal" id="july">
+            <div class="raceinfo">
+                <div class="month">
+                    <h2>July</h2>
+
+                    <div class="card">
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 10</span>
+                            </div>
+                            <img src="circuit/flag/GB.png" alt="">
+                            <h1>britain</h1>
+                            <span><b id="remaining_time_jul1"></b></span>
+                            <p id="remaining_min_jul1"></p><span id='remaining_sec_jul1'></span>
+                            <p id="racedayjul1">01-03</p>
+                        </div>
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 11</span>
+                            </div>
+                            <img src="circuit/flag/AUSTRIA.png" alt="">
+                            <h1>austria</h1>
+                            <span><b id="remaining_time_jul2"></b></span>
+                            <p id="remaining_min_jul2"></p><span id='remaining_sec_jul2'></span>
+                            <p id="racedayjul2">08-10</p>
+                        </div>
+
+                        <div class="text-card">
+                            <div class="text-title">
+                                <span>ROUND 12</span>
+                            </div>
+                            <img src="circuit/flag/FRANCE.png" alt="">
+                            <h1>france</h1>
+                            <span><b id="remaining_time_jul3"></b></span>
+                            <p id="remaining_min_jul3"></p><span id='remaining_sec_jul3'></span>
+                            <p id="racedayjul3">22-24</p>
+                        </div>
+                        <script>
+                            setInterval(function time() {
+                                for (var m_number = 1; m_number <= 3; m_number++) {
+                                    // console.log(m_number);
+                                    var temp3 = document.getElementById(`racedayjul${m_number}`);
+                                    // console.log(temp3.textContent);
+                                    var rd = temp3.textContent.substr(3, 2); // 從第3碼開始往後算2碼
+                                    // console.log(rd);// new date
+                                    var now = new Date();
+                                    var rdtime = new Date(2022, 06, rd, 20, 00);
+                                    // day
+                                    var diff = Math.floor((rdtime - now) / 86400000);
+                                    // console.log(`day:${diff}`)
+                                    // hour
+                                    var nowhr = now.getHours();
+                                    var rdhr = rdtime.getHours();
+                                    var diffhr = rdhr - nowhr;
+                                    if (diffhr < 0) {
+                                        diffhr = 24 - nowhr + rdhr - 1;
+
+                                    }
+                                    if (diffhr == 0) {
+                                        diffhr = 0;
+                                    }
+                                    //min
+                                    var nowmin = now.getMinutes();
+                                    var diffmin = 60 - nowmin;
+                                    if (diffmin == 60) {
+                                        diffmin = 0;
+                                    }
+                                    // sec
+                                    var nowsec = now.getSeconds();
+                                    var diffsec = 60 - nowsec;
+                                    if (diffsec == 60) {
+                                        diffsec = 0;
+                                    }
+                                    document.getElementById(`remaining_time_jul${m_number}`).innerText = `${diff}D ${diffhr}H`;
+                                    document.getElementById(`remaining_min_jul${m_number}`).innerText = `${diffmin}m`;
+                                    document.getElementById(`remaining_sec_jul${m_number}`).innerText = ` ${diffsec}s`;
+                                }
+                            }, 1000);
+                        </script>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <script>
+            var xx = document.querySelectorAll('h2');
+            console.log(xx);
+            for (var zz = 1;)
+
+                setInterval(function mm() {
+
+            }, 1000);
+
+
+
+            setInterval(function time() {
+                for (var m_number = 1; m_number <= 3; m_number++) {
+                    // console.log(m_number);
+                    var temp2 = document.getElementById(`racedaym${m_number}`);
+                    // console.log(temp2.textContent);
+                    var rd = temp2.textContent.substr(3, 2); // 從第3碼開始往後算2碼
+                    // console.log(rd);// new date
+                    var now = new Date();
+                    var rdtime = new Date(2022, 04, rd, 20, 00);
+
+
+                    // day
+                    var diff = Math.floor((rdtime - now) / 86400000);
+                    // console.log(`day:${diff}`)
+                    // hour
+                    var nowhr = now.getHours();
+                    var rdhr = rdtime.getHours();
+                    var diffhr = rdhr - nowhr;
+                    if (diffhr < 0) {
+                        diffhr = 24 - nowhr + rdhr - 1;
+
+                    }
+                    if (diffhr == 0) {
+                        diffhr = 0;
+                    }
+                    //min
+                    var nowmin = now.getMinutes();
+                    var diffmin = 60 - nowmin;
+                    if (diffmin == 60) {
+                        diffmin = 0;
+                    }
+                    // sec
+                    var nowsec = now.getSeconds();
+                    var diffsec = 60 - nowsec;
+                    if (diffsec == 60) {
+                        diffsec = 0;
+                    }
+                    document.getElementById(`remaining_time_m${m_number}`).innerText = `${diff}D ${diffhr}H`;
+                    document.getElementById(`remaining_min_m${m_number}`).innerText = `${diffmin}m`;
+                    document.getElementById(`remaining_sec_m${m_number}`).innerText = ` ${diffsec}s`;
+                }
+            }, 1000);
+        </script>
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>

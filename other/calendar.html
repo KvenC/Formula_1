@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        .month {
+            text-align: center;
+            border-bottom: 5px double red;
+        }
+        
+        table {
+            border-collapse: collapse;
+            border: 5px solid red;
+            /* text-align: c; */
+            margin: 0 auto;
+            width: 70%;
+            /* height: 500px; */
+        }
+        
+        .day {
+            height: 30px;
+        }
+        
+        tr {
+            border: 2px solid green;
+        }
+        
+        td {
+            border-right: 2px solid blue;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .italy,
+        .raceday {}
+        
+        .italy {
+            background-image: url();
+        }
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <img class='bkimg' src="background_container.jpg" alt=""> -->
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="logo3.png" alt=""></a>
+            </div>
+
+            <img id="photos" onclick="changephoto()" src="photo/photo1.jpg">
+            <!-- <script>
+                setInterval(function changephoto() {
+                    var photoelm = document.getElementById('photos'); // 取得photo的element
+                    var p1 = photoelm.src.indexOf('photo1'); // 取得photo1字串在photo中的第幾位
+                    var p3 = photoelm.src.indexOf('photo3');
+
+                    switch (p1) {
+                        case 28:
+                            photoelm.src = 'photo/photo2.jpg';
+                            break;
+                        case -1:
+                            if (p3 == 28) {
+                                photoelm.src = 'photo/photo1.jpg';
+                            } else {
+                                photoelm.src = 'photo/photo3.jpg';
+                            }
+                    }
+                }, 5000);
+            </script> -->
+        </div>
+        <div class="navbar">
+            <ul>
+                <!-- <li><a href="">What is F1</a> </li> -->
+                <li><a href="TEAM.html">TEAM</a> </li>
+                <li><a href="">Racer</a> </li>
+                <li><a href="">Calendar</a> </li>
+                <li><a href="">Message Board</a> </li>
+            </ul>
+        </div>
+        <div class="apr">
+            <h1 class="month">April</h1>
+            <table>
+                <tr class="day">
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                    <th>Sun</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td>15</td>
+                    <td>16</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>19</td>
+                    <td>20</td>
+                    <td>21</td>
+                    <td class="raceday">22<img src="circuit/ITALY.png" alt=""></td>
+                    <td class="raceday">23<img src="circuit/ITALY.png" alt=""></td>
+                    <td class="raceday">24<img src="circuit/ITALY.png" alt=""></td>
+
+                </tr>
+                <tr>
+                    <td>25</td>
+                    <td>26</td>
+                    <td>27</td>
+                    <td>28</td>
+                    <td>29</td>
+                    <td>30</td>
+                    <td></td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</body>
+
+
+</html>

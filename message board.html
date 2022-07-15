@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+</head>
+<style>
+    * {
+        font-family: Comic Sans MS;
+    }
+    
+    body {
+        width: 1100px;
+        margin: 0 auto;
+    }
+    
+    header h1 {
+        text-align: center;
+        background-color: antiquewhite;
+        padding: 30px
+    }
+    
+    div.section-inner {
+        max-width: 1100px;
+        padding: 0 25px;
+        margin: 0 auto;
+        /* border: 4px solid violet; */
+    }
+    
+    div.nav {
+        background-color: rgba(62, 62, 62, 0.823);
+        /* border: 1px solid blue; */
+        margin: 0 auto;
+        /* text-align: center; */
+    }
+    
+    div.nav ul {
+        margin: 0;
+        padding: 0;
+        border: 1px solid green;
+        text-align: center;
+    }
+    
+    div.nav ul li {
+        list-style: none;
+        float: left;
+        /* font-size: 80%; */
+        border: 1px solid red;
+        /* margin: 0 auto; */
+        text-align: center;
+    }
+    
+    div.nav ul li a:link,
+    div.nav ul li a:visited {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: gold;
+        /* border: 4px solid black; */
+    }
+    /* Navigation */
+    /* div.nav {
+        background-color: #d4d4d4;
+    }
+    
+    div.nav ul {
+        margin: 0;
+        padding: 0;
+    }
+    
+    div.nav ul li {
+        list-style: none;
+        float: left;
+        font-size: 93%;
+    }
+    
+    div.nav ul li a:link,
+    div.nav ul li a:visited {
+        display: block;
+        padding: 10px 15px;
+        text-decoration: none;
+        color: #000;
+        border-right: 1px solid #bababa;
+    } */
+    
+    @media screen and (max-width: 900px) {
+        div.nav ul li {
+            width: 25%;
+            border-bottom: 1px solid #bababa;
+        }
+    }
+    
+    @media screen and (max-width: 500px) {
+        div.nav ul li {
+            width: 25%;
+            font-size: 85%;
+        }
+    }
+    
+    .clearfix:before,
+    .clearfix:after {
+        content: "";
+        display: table;
+    }
+    
+    .clearfix:after {
+        clear: both;
+    }
+    
+    .clearfix {
+        *zoom: 1;
+    }
+</style>
+
+<header>
+    <div class="section-inner">
+        <h1>Message Board</h1>
+    </div>
+</header>
+
+<body>
+    <div class="nav">
+        <div class="section-inner">
+            <ul class="clearfix">
+                <!-- <li><a href="">What is F1</a> </li> -->
+                <li><a href="TEAM.html">TEAM</a> </li>
+                <li><a href="">Racer</a> </li>
+                <li><a href="calendar3.html">Calendar</a> </li>
+                <li><a href="">Message Board</a> </li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+<a class="logo" href="index.html"><img src="logo3.png"></a>
+
+</html>

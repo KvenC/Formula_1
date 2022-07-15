@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img id="photos" onclick="changephoto()" src="photo/photo1.jpg" alt="">
+
+
+    <script>
+        // var a = "";
+
+
+        setInterval(function changephoto() {
+            var photoelm = document.getElementById('photos'); // 取得photo的element
+            // console.log(photoelm.src);
+
+
+            var p1 = photoelm.src.indexOf('photo1'); // 取得photo1字串在photo中的第幾位
+            // console.log(p1);
+
+
+            var p3 = photoelm.src.indexOf('photo3');
+            // console.log(p3);
+
+            switch (p1) {
+                case 28:
+                    photoelm.src = 'photo/photo2.jpg';
+                    // console.log('case 28');;
+                    break;
+                case -1:
+                    if (p3 == 28) {
+                        photoelm.src = 'photo/photo1.jpg';
+                    } else {
+                        photoelm.src = 'photo/photo3.jpg';
+                    }
+                    // console.log('case -1');
+
+                    break;
+
+                    // if (p1 == 28) {
+                    //     photoelm.src = './photo/photo2.jpg';
+                    //     console.log(photoelm.src);
+                    //     console.log('GO');
+                    // } else {
+                    //     photoelm.src = './photo/photo1.jpg';
+                    //     console.log('-1');
+                    // }
+            }
+        }, 5000);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+.container {
+    width: 1152px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+
+
+/* Header */
+
+.logo a img {
+    width: 100px;
+    /* margin: 0 auto; */
+    border: 2px solid red;
+}
+
+.logo {
+    float: left;
+    left: 0;
+}
+
+
+/* Navbar */
+
+div.section-inner {
+    max-width: 1100px;
+    padding: 0 25px;
+    margin: 0 auto;
+    /* border: 4px solid violet; */
+}
+
+div.nav {
+    background-color: rgba(62, 62, 62, 0.823);
+    /* border: 1px solid blue; */
+    /* margin: 0 auto; */
+    /* text-align: center; */
+    /* vertical-align: middle; */
+}
+
+div.nav ul {
+    margin: 0;
+    padding-left: 250px;
+    /* border: 3px solid green; */
+    margin: 0 auto;
+    /* text-align: center; */
+}
+
+div.nav ul li {
+    list-style: none;
+    float: left;
+    padding: 5px;
+    /* font-size: 80%; */
+    /* border: 1px solid red; */
+    /* margin: 0 auto; */
+    /* text-align: center; */
+}
+
+div.nav ul li a:link,
+div.nav ul li a:visited {
+    display: block;
+    padding: 15px 15px;
+    text-decoration: none;
+    color: gold;
+    /* border: 4px solid black; */
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+ul li a:hover {
+    background-image: linear-gradient(to top, rgba(214, 118, 118, 0.764), rgb(60, 60, 60), rgba(120, 120, 120), rgba(180, 180, 180), rgba(240, 240, 240));
+    border-radius: 10px;
+}
+
+@media (max-width: 900px) {
+    .header {
+        width: 100%;
+        /* height: 100%; */
+    }
+    div.nav ul {
+        padding-left: 100px;
+        /* text-align: center; */
+    }
+}
+
+@media (max-width: 750px) {}
+
+.header {
+    width: 100%;
+    /* height: 100%; */
+}
+
+div.nav ul li {
+    width: 16%;
+    padding: 10px;
+}
+
+ul li a {
+    margin-right: 10px;
+}
+
+.header .logo img {
+    float: none;
+    vertical-align: middle;
+    /* border: 1px solid fuchsia; */
+    /* height: 150px; */
+    width: 200px;
+    margin-left: 60px;
+    margin: 0 auto;
+}
+
+div.nav ul {
+    padding-left: 0px;
+    /* text-align: center; */
+}

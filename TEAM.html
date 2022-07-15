@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>TEAM</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            float: left;
+            border: 1px solid blue;
+            margin: 20px 0 20px 37px;
+        }
+        
+        .team {
+            /* border: 1px solid saddlebrown; */
+        }
+        
+        table td :first-child {
+            /* border: 1px solid green; */
+        }
+        
+        td {
+            border: 1px solid red;
+        }
+        
+        .brandtitle {
+            background-color: white;
+            height: 100px;
+            width: 50px;
+            text-align: center;
+        }
+        
+        .brandtitle img {
+            /* height: 100px; */
+            width: 150px;
+        }
+        
+        .driver img {
+            width: 50px;
+        }
+        
+        .driver td {
+            /* border: 2px solid black; */
+        }
+        
+        .carphoto {
+            width: 500px;
+            height: 300px;
+        }
+        
+        .carphoto img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .rt {
+            /* margin-left: 120px; */
+            /* border-left: 5px solid red; */
+        }
+        
+        .mercedes {
+            /* border: 1px solid red; */
+            /* display: inline; */
+            border: 5px #00D2BE;
+            border-style: solid dashed;
+            position: relative;
+            /* border-collapse: collapse; */
+        }
+        
+        .ferrari {
+            border: 5px #DC0000;
+            border-style: solid dashed;
+            /* border-collapse: collapse; */
+        }
+        
+        .ferrari th {
+            /* border: 2px solid red; */
+        }
+        
+        .ferrari td {
+            /* border: 2px solid green; */
+        }
+        
+        .red_bull {
+            border: 5px #0600EF;
+            border-style: solid dashed;
+        }
+        
+        .mclaren {
+            border: 5px #FF8700;
+            border-style: solid dashed;
+        }
+        
+        .alpine {
+            /* border-style: groove 5px #0090FF; */
+            /* border: 5px groove #0090FF; */
+            border-width: 5px;
+            border-color: #009ac9;
+            border-style: solid dashed;
+        }
+        
+        .alfa_romeo {
+            /* border: 5px solid transparent;
+            border-radius: 10px;
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+            background-image: linear-gradient(to right, rgb(243, 239, 239), rgb(245, 245, 245)), linear-gradient(100deg, #8F41E9, #578AEF); */
+            /* border-style: 5px unset;
+            border-color: #900000; */
+            /* border: 5px unset #900000; */
+            border-width: 5px;
+            border-color: #900000;
+            border-style: solid dashed;
+        }
+        
+        .haas {
+            border: 5px whitesmoke;
+            border-style: solid dashed;
+        }
+        
+        .alphatauri {
+            border: 5px #2B4562;
+            border-style: solid dashed;
+            border-radius: 10px;
+        }
+        
+        .williams {
+            border: 5px #005AFF;
+            border-style: solid dashed;
+        }
+        
+        .aston_martin {
+            border: 5px #006F62;
+            border-style: solid dashed;
+        }
+        
+        @media screen and (max-width:700px) {
+            .container {
+                width: 100%;
+            }
+            .header {
+                width: 100%;
+                /* height: 100%; */
+            }
+            #photos {
+                width: 100%;
+                /* height: 100%; */
+            }
+            .navbar ul li {
+                float: none;
+                /* position: fixed; */
+                /* left:0px; */
+            }
+            .calendarbox {
+                width: 100%;
+            }
+            table {
+                float: none;
+                margin: 20px auto;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="container">
+        <!-- <img class='bkimg' src="background_container.jpg" alt=""> -->
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="logo3.png" alt=""></a>
+            </div>
+
+            <img id="photos" onclick="changephoto()" src="photo/photo1.jpg">
+            <!-- <script>
+                setInterval(function changephoto() {
+                    var photoelm = document.getElementById('photos'); // 取得photo的element
+                    var p1 = photoelm.src.indexOf('photo1'); // 取得photo1字串在photo中的第幾位
+                    var p3 = photoelm.src.indexOf('photo3');
+
+                    switch (p1) {
+                        case 28:
+                            photoelm.src = 'photo/photo2.jpg';
+                            break;
+                        case -1:
+                            if (p3 == 28) {
+                                photoelm.src = 'photo/photo1.jpg';
+                            } else {
+                                photoelm.src = 'photo/photo3.jpg';
+                            }
+                    }
+                }, 5000);
+            </script> -->
+        </div>
+        <div class="navbar">
+            <ul>
+                <!-- <li><a href="">What is F1</a> </li> -->
+                <li><a href="TEAM.html">TEAM</a> </li>
+                <li><a href="">Racer</a> </li>
+                <li><a href="calendar4.html">Calendar</a> </li>
+                <li><a href="">News</a> </li>
+            </ul>
+        </div>
+        <div class="team">
+
+            <table class="mercedes">
+
+                <tr>
+                    <th class="teamname" colspan="2">Mercedes-AMG Petronas F1 Team</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Mercedes/logo.jpeg" alt="">
+                        <img src="photo/team/Mercedes/CAR.png" alt="">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Lewis Hamilton <img src="photo/team/Mercedes/driver1.png" alt=""></td>
+                    <td>George Russell <img src="photo/team/Mercedes/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Mercedes/photo1.png" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="ferrari rt">
+                <tr>
+                    <th class="" colspan="2">Scuderia Ferrari</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Ferrari/logo.jpeg" alt="">
+                        <img src="photo/team/Ferrari/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Charles Leclerc <img src="photo/team/Ferrari/driver1.png" alt=""></td>
+                    <td>Carlos Sainz<img src="photo/team/Ferrari/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Ferrari/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="red_bull">
+                <tr>
+                    <th class="" colspan="2">Oracle Red Bull Racing </th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Red_Bull/logo.jpeg" alt="">
+                        <img src="photo/team/Red_Bull/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Max Verstappen<img src="photo/team/Red_Bull/driver1.png" alt=""></td>
+                    <td>Sergio Perez<img src="photo/team/Red_Bull/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Red_Bull/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="mclaren rt">
+                <tr>
+                    <th class="" colspan="2">McLaren F1 Team </th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Mclaren/logo.jpeg" alt="">
+                        <img src="photo/team/Mclaren/car.png" alt="">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Lando Norris <img src="photo/team/Mclaren/driver1.png" alt=""></td>
+                    <td>Daniel Ricciardo<img src="photo/team/Mclaren/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Mclaren/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="alpine">
+                <tr>
+                    <th class="" colspan="2">BWT Alpine F1 Team</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Alpine/logo.jpeg" alt="">
+                        <img src="photo/team/Alpine/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Frenando Alonso <img src="photo/team/Alpine/driver1.png" alt=""></td>
+                    <td>Esteban Ocon<img src="photo/team/Alpine/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Alpine/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="alfa_romeo rt">
+                <tr>
+                    <th class="" colspan="2">Alfa Romeo F1 Team ORLEN</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Alfa_romeo/logo.png" alt="">
+                        <img src="photo/team/Alfa_romeo/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Valtteri Bottas<img src="photo/team/Alfa_romeo/driver1.png" alt=""></td>
+                    <td>Guanyu Zhou<img src="photo/team/Alfa_romeo/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Alfa_romeo/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="haas">
+                <tr>
+                    <th class="" colspan="2">Haas F1 Team</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Haas/logo.jpeg" alt="">
+                        <img src="photo/team/Haas/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Mick Schmacher<img src="photo/team/Haas/driver1.png" alt=""></td>
+                    <td>Kevin Magnussen<img src="photo/team/Haas/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Haas/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="alphatauri rt">
+                <tr>
+                    <th class="" colspan="2">Scuderia AlphaTauri</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/AlphaTauri/logo.jpeg" alt="">
+                        <img src="photo/team/AlphaTauri/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Pieere Gasly<img src="photo/team/AlphaTauri/driver1.png" alt=""></td>
+                    <td>Yuki Tsunoda<img src="photo/team/AlphaTauri/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/AlphaTauri/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="williams">
+                <tr>
+                    <th class="" colspan="2">Williams Racing</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Williams/logo.jpeg" alt="">
+                        <img src="photo/team/Williams/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Alexander Albon<img src="photo/team/Williams/driver1.png" alt=""></td>
+                    <td>Nicholas Latifi<img src="photo/team/Williams/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Williams/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="aston_martin rt">
+                <tr>
+                    <th class="" colspan="2">Aston Martin Aramco Cognizant F1 Team</th>
+                </tr>
+                <tr>
+                    <td class="brandtitle" colspan="2">
+                        <img src="photo/team/Aston_Martin/logo.jpeg" alt="">
+                        <img src="photo/team/Aston_Martin/car.png" alt="">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        Driver
+                    </td>
+                </tr>
+                <tr class="driver">
+                    <td>Sebastian Vettel<img src="photo/team/Aston_Martin/driver1.png" alt=""></td>
+                    <td>Lance Stroll<img src="photo/team/Aston_Martin/driver2.png" alt=""></td>
+                </tr>
+                <tr>
+                    <td class="carphoto" colspan="2">
+                        <img src="photo/team/Aston_Martin/photo1.jpeg" alt="">
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>

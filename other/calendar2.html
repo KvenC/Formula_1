@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        section {
+            min-height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #6667AB
+        }
+        
+        section:nth-child(1) {
+            color: blue;
+        }
+        
+        section:nth-child(2) {
+            color: #1D212B;
+            background-color: white;
+        }
+        
+        section:nth-child(3) {
+            color: white;
+        }
+        
+        section:nth-child(4) {
+            color: #1D212B;
+            background: white;
+        }
+        
+        .month {
+            margin: 100px;
+        }
+        
+        .month h2 {
+            font-size: 40px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        
+        .racetime {
+            display: flex;
+        }
+        
+        .country {
+            position: relative;
+            background: green;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            width: 250px;
+            height: 250px;
+        }
+        
+        .country h3 {
+            font-size: 30px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        
+        .country img {
+            position: relative;
+            /* top: 5px; */
+            left: 20px;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <img class='bkimg' src="background_container.jpg" alt=""> -->
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="logo3.png" alt=""></a>
+            </div>
+
+            <img id="photos" onclick="changephoto()" src="photo/photo1.jpg">
+            <!-- <script>
+                setInterval(function changephoto() {
+                    var photoelm = document.getElementById('photos'); // 取得photo的element
+                    var p1 = photoelm.src.indexOf('photo1'); // 取得photo1字串在photo中的第幾位
+                    var p3 = photoelm.src.indexOf('photo3');
+
+                    switch (p1) {
+                        case 28:
+                            photoelm.src = 'photo/photo2.jpg';
+                            break;
+                        case -1:
+                            if (p3 == 28) {
+                                photoelm.src = 'photo/photo1.jpg';
+                            } else {
+                                photoelm.src = 'photo/photo3.jpg';
+                            }
+                    }
+                }, 5000);
+            </script> -->
+        </div>
+        <div class="navbar">
+            <ul>
+                <!-- <li><a href="">What is F1</a> </li> -->
+                <li><a href="TEAM.html">TEAM</a> </li>
+                <li><a href="">Racer</a> </li>
+                <li><a href="">Calendar</a> </li>
+                <li><a href="">Message Board</a> </li>
+            </ul>
+        </div>
+
+        <section>
+            <div class="apr month reveal">
+                <h2>April</h2>
+                <div class="racetime">
+                    <div class="country">
+                        <p>
+                            <img src="circuit/flag/ITALY.png" alt=""> Round5
+                            <h3>ITIAL</h3>
+                        </p>
+                        <p>4/22-24ewkrlwejejiwoejrioejioeer</p>
+                    </div>
+                    <div class="country">
+                        <h3>UNITED_STATES</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                    <div class="country">
+                        <h3>SPAIN</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="apr month reveal">
+                <h2>May</h2>
+                <div class="racetime">
+                    <div class="country">
+                        <h3>ITIAL</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                    <div class="country">
+                        <h3>UNITED_STATES</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                    <div class="country">
+                        <h3>SPAIN</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="apr month reveal">
+                <h2>April</h2>
+                <div class="racetime">
+                    <div class="country">
+                        <h3>ITIAL</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                    <div class="country">
+                        <h3>UNITED_STATES</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                    <div class="country">
+                        <h3>SPAIN</h3>
+                        <p>fjiwoefjklwemflkwejfiowjeflkwemlkekl</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+
+</html>

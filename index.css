@@ -1,0 +1,89 @@
+.container {
+    width: 1152px;
+    margin: 0 auto;
+    background-color: antiquewhite;
+}
+
+.header {
+    width: 100%;
+    height: 300px;
+    background-color: aquamarine;
+    position: relative;
+    /* float: left; */
+    text-align: center;
+}
+
+.header .logo {
+    float: left;
+    position: absolute;
+}
+
+.header .logo img {
+    width: 200px;
+}
+
+#photos {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+
+/* Navbar */
+
+.navbar {
+    position: relative;
+    text-align: center;
+    /* display: block; */
+    /* width: auto;
+    height: 50px; */
+    /* margin: 0 auto; */
+    /* top:px;
+    left:  */
+    /* background-color: rgba(0, 0, 0, 0.518); */
+    background-color: rgba(255, 0, 0, 0.591);
+    margin: -54px 0px 0px 0px;
+}
+
+.navbar ul {
+    margin: 0 auto;
+    /* float: left; */
+    /* display: inline-block; */
+    padding: 0;
+}
+
+.navbar ul li {
+    list-style-type: none;
+    /* float: left; */
+    /* background-color: rgba(186, 178, 178, 0.518); */
+    /* border: groove 10px rgba(0, 0, 0, 0.518); */
+    border-radius: 10px;
+    display: inline-block;
+    /* text-align: center; */
+    /* padding-right: 10px; */
+    margin: 0 auto;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    /* text-shadow: black 0.1em 0.1em 0.2em; */
+    /* background-color: wheat; */
+    padding: 15px;
+    width: 120px;
+    height: 25px;
+    margin: 0 auto;
+    line-height: 25px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover a:hover {
+    background-color: black;
+    color:gold;
+    /* border:3px solid red; */
+     border-inline: 5px solid red;    
+/* background-image: linear-gradient(to top, #2c756b, #e3d4b6); */
+    
+}

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Index</title>
+
+    <style>
+        /* .body {
+            width: 1440px;
+        } */
+        /* Calendar */
+*{
+    font-family: verdana;
+
+}
+        .calendarbox {
+            float: left;
+            width: 100%;
+            height: 200px;
+            background-color: lightgrey;
+            white-space: nowrap;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            margin: -17px 0 0 0;
+            background-color: #919484;
+        }
+
+        .calendarbox span {
+            position: absolute;
+            font-size: 20px;
+            padding: 3px 0 0 20px;
+            color: gold;
+        }
+
+        .calendarcontent {
+            background-color: #F5F8F2;
+            display: inline-block;
+            /* position: relative; */
+            width: 203px;
+            height: 115px;
+            margin: 32px 0px 0px 50px;
+            position: relative;
+            border-radius: 10px;
+            /* float: left; */
+            /* padding-right: 30px; */
+        }
+
+        .calendarcontent:hover {
+            background-color: transparent;
+        }
+
+        .calendarcontent img {
+            width: 200px;
+            height: 112px
+        }
+
+        .calendarcontent:hover img {
+            transform: scale(1.3);
+            border: none;
+            /* 圖片放大倍率 */
+        }
+
+        .calendarcontent img {
+            border: 3px solid #ff9900;
+            border-radius: 10px;
+            /*圖片放大所需的時間和特效*/
+            transition: all 1s ease 0s;
+        }
+
+
+        /* 放大後的資訊卡*/
+
+        .info {
+            /* display: inline-block; */
+            opacity: 0;
+            position: absolute;
+            box-sizing: border-box;
+            /* background-color: rgba(0, 0, 0, 0.633); */
+            background-color: #000000c3;
+            top: 0;
+            /* left: 25px; */
+            width: 200px;
+            height: 112px;
+            text-align: center;
+            /* padding-top: 20px; */
+            transition: .5s ease-out;
+            transform: scale(1.4);
+            border: 6px solid #A33318;
+            border-radius: 10px;
+        }
+
+        .info p {
+            /* background-color: whitesmoke; */
+            color: rgb(225, 1, 1);
+            text-shadow: white 2px 2px 0.2em;
+            font-size: 20px;
+            font-weight: 700;
+            /* background-color: rgba(74, 74, 74, 0.386); */
+            
+
+        }
+
+        .info:hover {
+            /*   -webkit-transition: 500ms; */
+            margin-top: 0;
+            opacity: 1;
+        }
+
+
+        figcaption {
+            background-color: black;
+            color: white;
+            text-align: center;
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+
+        .intro {
+            /* border: 3px solid rebeccapurple; */
+            /* margin: 0 auto; */
+            /* vertical-align: middle;
+            justify-items: center; */
+            text-align: center;
+        }
+
+        .introteam,
+        .introcal {
+            width: 480px;
+            display: inline-block;
+            padding: 40px;
+            /* margin: 40px; */
+            /* border: 3px solid red; */
+        }
+
+        .introteam {
+            border-right: 3px solid red;
+        }
+
+        .introteam img,
+        .introcal img {
+            width: 100%;
+            border-radius: 10px;
+            transition: all 1s ease 0s;
+        }
+
+        .introteam:hover img,
+        .introcal:hover img {
+            transform: scale(0.9);
+        }
+
+        @media screen and (max-width:1000px) {
+            .container {
+                width: 100%;
+            }
+
+            .header {
+                width: 100%;
+                justify-content: center;
+                /* height: 100%; */
+            }
+
+            #photos {
+                width: 100%;
+                /* height: 100%; */
+            }
+
+            .calendarbox {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            .introteam {
+                border-right: 3px solid transparent;
+                border-bottom: 3px solid red;
+            }
+
+            .calendarbox {
+                float: left;
+                width: 100%;
+                height: 380px;
+                background-color: lightgrey;
+                white-space: normal;
+                overflow-x: scroll;
+                overflow-y: scroll;
+                margin: 0 auto;
+                background-color: #919484;
+                text-align: center;
+            }
+
+            .calendarcontent {
+                background-color: #F5F8F2;
+                display: inline-block;
+                position: relative;
+                width: 203px;
+                height: 115px;
+            }
+        }
+
+        @media (max-width: 530px) {
+
+            .introteam,
+            .introcal {
+                width: 360px;
+            }
+
+            .navbar ul li {
+                margin: 7px;
+                margin-top: -2px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <!-- <img class='bkimg' src="background_container.jpg" alt=""> -->
+        <div class="header">
+            <div class="logo">
+                <a href="index.html"><img src="logo3.png" alt=""></a>
+            </div>
+
+            <img id="photos" src="photo/photo1.jpg">
+            <script>
+                setInterval(function changephoto() {
+                    var photoelm = document.getElementById('photos'); // 取得photo的element
+                    var p1 = photoelm.src.indexOf('photo1'); // 取得photo1字串在photo中的第幾位
+                    var p3 = photoelm.src.indexOf('photo3');
+
+                    switch (p1) {
+                        case 28:
+                            photoelm.src = 'photo/photo2.jpg';
+                            break;
+                        case -1:
+                            if (p3 == 28) {
+                                photoelm.src = 'photo/photo1.jpg';
+                            } else {
+                                photoelm.src = 'photo/photo3.jpg';
+                            }
+                    }
+                }, 5000);
+            </script>
+        </div>
+        <div class="navbar">
+            <ul>
+                <!-- <li><a href="">What is F1</a> </li> -->
+                <li><a href="TEAM.html">TEAM</a> </li>
+                <li><a href="">Driver</a> </li>
+                <li><a href="calendar4.html">Calendar</a> </li>
+                <li><a href="">News</a> </li>
+            </ul>
+        </div>
+        <div class="calendarbox">
+            <div class="calendarcontent">
+                <img src="circuit/ITALY.png" alt="ITALY">
+                <figcaption>ITALY</figcaption>
+                <div class="info">
+                    <p>ITALY</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#april'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/UNITED_STATES.png" alt="US">
+                <figcaption>UNITED STATES</figcaption>
+                <div class="info">
+                    <p>UNITED STATES</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#may'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/SPAIN.png" alt="SPAIN">
+                <figcaption>SPAIN</figcaption>
+                <div class="info">
+                    <p>SPAIN</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#may'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/MONACO.png" alt="MONACO">
+                <figcaption>MONACO</figcaption>
+                <div class="info">
+                    <p>MONACO</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#may'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/AZERBAIJAN.png" alt="AZERBAIJAN">
+                <figcaption>AZERBAIJAN</figcaption>
+                <div class="info">
+                    <p>AZERBAIJAN</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#june'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/CANADA.png" alt="CANADA">
+                <figcaption>CANADA</figcaption>
+                <div class="info">
+                    <p>CANADA</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#june'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/GREAT_BRITAIN.png" alt="GREAT_BRITAIN">
+                <figcaption>GREAT BRITAIN</figcaption>
+
+                <div class="info">
+                    <p>GREAT BRITAIN</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#july'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/AUSTRIA.png" alt="AUSTRIA">
+                <figcaption>AUSTRIA</figcaption>
+                <div class="info">
+                    <p>AUSTRIA</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#july'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/FRANCE.png" alt="FRANCE">
+                <figcaption>FRANCE</figcaption>
+                <div class="info">
+                    <p>FRANCE</p>
+                    <input type="button" value="比賽時間" onclick="location.href='./calendar4.html#july'">
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/HUNGARY.png" alt="HUNGARY">
+                <figcaption>HUNGARY</figcaption>
+                <div class="info">
+                    <p>HUNGARY</p>
+                    <button>View More</button>
+                </div>
+            </div>
+            <div class="calendarcontent">
+                <img src="circuit/BELGIUM.png" alt="BELGIUM">
+                <figcaption>BELGIUM</figcaption>
+                <div class="info">
+                    <p>BELGIUM</p>
+                    <button>View More</button>
+                </div>
+            </div>
+
+
+        </div>
+        <!-- <div class="introduce">
+            <table>
+                <tr>
+                    <td class="allteam">
+                        <a href="TEAM.html"><img src="introduce/All_TEAM.jpg" alt=""></a>
+                    </td>
+                    <td class="alldriver"><img src="introduce/All_DRIVER.jpeg" alt=""></td>
+                </tr>
+            </table>
+        </div> -->
+        <div class="intro">
+            <div class="introteam">
+                <a href="TEAM.html"><img src="introduce/All_TEAM.jpg" alt=""></a>
+            </div>
+            <div class="introcal">
+                <a href="calendar4.html"><img src="introduce/calendar.png" alt=""></a>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
