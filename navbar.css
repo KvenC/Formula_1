@@ -30,28 +30,18 @@ div.section-inner {
 
 div.nav {
     background-color: rgba(62, 62, 62, 0.823);
-    /* border: 1px solid blue; */
-    /* margin: 0 auto; */
-    /* text-align: center; */
-    /* vertical-align: middle; */
 }
 
 div.nav ul {
     margin: 0;
     padding-left: 250px;
-    /* border: 3px solid green; */
     margin: 0 auto;
-    /* text-align: center; */
 }
 
 div.nav ul li {
     list-style: none;
     float: left;
     padding: 5px;
-    /* font-size: 80%; */
-    /* border: 1px solid red; */
-    /* margin: 0 auto; */
-    /* text-align: center; */
 }
 
 div.nav ul li a:link,
